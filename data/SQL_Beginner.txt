@@ -1,0 +1,81 @@
+1. Waar staat SQL voor?
+
+A. Structured Query Language
+B. Simple Query Language
+C. Sequential Query Language
+D. System Query Logic
+
+2. Welke SQL-opdracht gebruik je om gegevens uit een tabel op te halen?
+
+A. GET
+B. SELECT
+C. FETCH
+D. EXTRACT
+
+3. Welke clausule gebruik je om resultaten te filteren?
+
+A. FILTER
+B. LIMIT
+C. WHERE
+D. SORT
+
+4. Welke SQL-opdracht gebruik je om nieuwe gegevens toe te voegen aan een tabel?
+
+A. INSERT INTO
+B. ADD DATA
+C. CREATE ROW
+D. UPDATE
+
+5. Welke SQL-opdracht gebruik je om bestaande gegevens te wijzigen?
+
+A. CHANGE
+B. MODIFY
+C. UPDATE
+D. ALTER DATA
+
+6. Welke clausule gebruik je om resultaten te sorteren?
+
+A. ORDER BY
+B. GROUP BY
+C. SORT BY
+D. ARRANGE
+
+7. Welke functie gebruik je om het aantal rijen te tellen?
+
+A. TOTAL()
+B. COUNT()
+C. NUMBER()
+D. SUM()
+
+8. Welke SQL-clausule gebruik je om gegevens te groeperen?
+
+A. GROUP BY
+B. ORDER BY
+C. COLLECT BY
+D. MERGE BY
+
+9. Welke SQL-opdracht gebruik je om een tabel te verwijderen?
+
+A. REMOVE TABLE
+B. DELETE TABLE
+C. DROP TABLE
+D. ERASE TABLE
+
+10. Welke operator gebruik je om te zoeken naar een patroon in tekst?
+
+A. MATCH
+B. LIKE
+C. FIND
+D. SEARCH
+
+Antwoorden
+A
+B
+C
+A
+C
+A
+B
+A
+C
+B

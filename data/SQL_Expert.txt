@@ -1,0 +1,256 @@
+1. Wat doet deze query?
+SELECT naam
+FROM klanten
+WHERE id IN (
+    SELECT klant_id
+    FROM bestellingen
+);
+
+A. Geeft klanten met minstens één bestelling
+B. Geeft alle klanten
+C. Geeft klanten zonder bestellingen
+D. Geeft alle bestellingen
+
+2. Wat doet deze query?
+SELECT naam
+FROM klanten
+WHERE id NOT IN (
+    SELECT klant_id
+    FROM bestellingen
+);
+
+A. Geeft klanten zonder bestellingen
+B. Geeft klanten met bestellingen
+C. Geeft alle klanten
+D. Geeft dubbele klanten
+
+3. Wat doet deze query?
+SELECT *
+FROM producten
+WHERE prijs > (
+    SELECT AVG(prijs)
+    FROM producten
+);
+
+A. Producten duurder dan het gemiddelde
+B. Producten goedkoper dan het gemiddelde
+C. Gemiddelde prijs
+D. Alle producten
+
+4. Wat doet deze query?
+SELECT naam
+FROM klanten
+WHERE stad = (
+    SELECT stad
+    FROM klanten
+    WHERE naam = 'Jan'
+);
+
+A. Klanten uit dezelfde stad als Jan
+B. Alleen Jan
+C. Klanten uit alle steden
+D. Klanten zonder stad
+
+5. Wat doet deze query?
+SELECT naam
+FROM klanten k
+WHERE EXISTS (
+    SELECT *
+    FROM bestellingen b
+    WHERE b.klant_id = k.id
+);
+
+A. Klanten met minstens één bestelling
+B. Klanten zonder bestellingen
+C. Alle klanten
+D. Alleen eerste klant
+
+6. Wat doet deze query?
+SELECT naam
+FROM klanten k
+WHERE NOT EXISTS (
+    SELECT *
+    FROM bestellingen b
+    WHERE b.klant_id = k.id
+);
+
+A. Klanten zonder bestellingen
+B. Klanten met bestellingen
+C. Alle klanten
+D. Alle bestellingen
+
+7. Wat doet deze query?
+SELECT klant_id
+FROM bestellingen
+GROUP BY klant_id
+HAVING COUNT(*) > 1;
+
+A. Klanten met meerdere bestellingen
+B. Klanten met één bestelling
+C. Alle klanten
+D. Alle bestellingen
+
+8. Wat doet deze query?
+SELECT *
+FROM klanten
+WHERE stad IS NULL;
+
+A. Klanten zonder stad
+B. Klanten met stad
+C. Alle klanten
+D. Lege rijen
+
+9. Wat doet deze query?
+SELECT *
+FROM klanten
+WHERE stad = NULL;
+
+A. Klanten zonder stad
+B. Alle klanten
+C. Geen rijen
+D. Alleen NULL waarden
+
+10. Wat doet deze query?
+SELECT *
+FROM klanten
+ORDER BY naam DESC
+LIMIT 1;
+
+A. Eerste klant alfabetisch
+B. Laatste klant alfabetisch
+C. Alle klanten
+D. Eerste rij in tabel
+
+11. Wat doet deze query?
+SELECT naam
+FROM klanten
+WHERE id IN (
+    SELECT klant_id
+    FROM bestellingen
+    WHERE prijs > 100
+);
+
+A. Klanten met een bestelling boven 100
+B. Klanten met bestellingen onder 100
+C. Alle klanten
+D. Alle bestellingen
+
+12. Wat doet deze query?
+SELECT COUNT(*)
+FROM bestellingen
+WHERE prijs > (
+    SELECT AVG(prijs)
+    FROM bestellingen
+);
+
+A. Aantal bestellingen boven gemiddelde prijs
+B. Gemiddelde prijs
+C. Aantal klanten
+D. Totale prijs
+
+13. Wat doet deze query?
+SELECT *
+FROM klanten k
+LEFT JOIN bestellingen b
+ON k.id = b.klant_id;
+
+A. Alle klanten en hun bestellingen
+B. Alleen klanten met bestellingen
+C. Alleen bestellingen
+D. Alleen klanten zonder bestellingen
+
+14. Wat doet deze query?
+SELECT *
+FROM klanten k
+INNER JOIN bestellingen b
+ON k.id = b.klant_id;
+
+A. Alleen klanten met bestellingen
+B. Alle klanten
+C. Klanten zonder bestellingen
+D. Alle bestellingen
+
+15. Wat doet deze query?
+SELECT COUNT(DISTINCT klant_id)
+FROM bestellingen;
+
+A. Aantal unieke klanten met bestellingen
+B. Aantal bestellingen
+C. Aantal producten
+D. Aantal duplicaten
+
+16. Wat doet deze query?
+SELECT *
+FROM producten
+WHERE prijs = (
+    SELECT MAX(prijs)
+    FROM producten
+);
+
+A. Duurste product(en)
+B. Goedkoopste product
+C. Gemiddelde product
+D. Alle producten
+
+17. Wat doet deze query?
+SELECT naam
+FROM klanten
+WHERE naam LIKE 'A%';
+
+A. Namen beginnend met A
+B. Namen eindigend met A
+C. Namen met A in het midden
+D. Namen zonder A
+
+18. Wat doet deze query?
+SELECT naam
+FROM klanten
+WHERE naam LIKE '%A';
+
+A. Namen beginnend met A
+B. Namen eindigend met A
+C. Namen met A in het midden
+D. Namen zonder A
+
+19. Wat doet deze query?
+SELECT SUM(prijs)
+FROM bestellingen;
+
+A. Totale waarde van alle bestellingen
+B. Gemiddelde prijs
+C. Hoogste prijs
+D. Aantal bestellingen
+
+20. Wat doet deze query?
+SELECT klant_id
+FROM bestellingen
+GROUP BY klant_id
+HAVING COUNT(*) = 1;
+
+A. Klanten met exact één bestelling
+B. Klanten met meerdere bestellingen
+C. Alle klanten
+D. Alle bestellingen
+
+Antwoorden
+
+A
+A
+A
+A
+A
+A
+A
+A
+C
+B
+A
+A
+A
+A
+A
+A
+A
+B
+A
+A

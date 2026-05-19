@@ -1,0 +1,169 @@
+1. Wat doet een INNER JOIN?
+
+A. Geeft alle rijen uit beide tabellen
+B. Geeft alleen rijen waar een match bestaat in beide tabellen
+C. Geeft alle rijen uit de linker tabel
+D. Geeft alle rijen uit de rechter tabel
+
+2. Wat is het verschil tussen WHERE en HAVING?
+
+A. HAVING werkt alleen met strings
+B. WHERE filtert na groepering
+C. HAVING filtert na GROUP BY
+D. Er is geen verschil
+
+3. Wat doet deze query?
+SELECT COUNT(DISTINCT klant_id)
+FROM bestellingen;
+
+A. Telt alle rijen
+B. Telt unieke klant_id waarden
+C. Telt dubbele klant_id waarden
+D. Telt alleen NULL waarden
+
+4. Welke JOIN geeft alle rijen uit de linker tabel, zelfs zonder match?
+
+A. RIGHT JOIN
+B. FULL JOIN
+C. LEFT JOIN
+D. INNER JOIN
+
+5. Wat doet GROUP BY?
+
+A. Sorteert gegevens
+B. Combineert rijen met dezelfde waarden
+C. Verwijdert duplicaten
+D. Filtert rijen
+
+6. Welke functie berekent het gemiddelde?
+
+A. MEAN()
+B. AVG()
+C. MEDIAN()
+D. AVERAGE()
+
+7. Wat doet ORDER BY leeftijd DESC?
+
+A. Sorteert leeftijd oplopend
+B. Sorteert leeftijd aflopend
+C. Filtert leeftijd
+D. Groepeert leeftijd
+
+8. Wat doet LIMIT 5?
+
+A. Haalt de eerste 5 kolommen op
+B. Beperkt het aantal rijen tot 5
+C. Beperkt het aantal tabellen
+D. Beperkt het aantal queries
+
+9. Wat doet een PRIMARY KEY?
+
+A. Laat duplicaten toe
+B. Identificeert elke rij uniek
+C. Verbindt twee tabellen
+D. Sorteert data
+
+10. Wat doet een FOREIGN KEY?
+
+A. Verwijdert data uit andere tabellen
+B. Verbindt een tabel met een andere tabel
+C. Sorteert kolommen
+D. Maakt duplicaten
+
+11. Wat doet deze query?
+SELECT naam
+FROM klanten
+WHERE naam LIKE 'A%';
+
+A. Namen die eindigen op A
+B. Namen met A in het midden
+C. Namen die beginnen met A
+D. Namen zonder A
+
+12. Wat doet DISTINCT?
+
+A. Sorteert rijen
+B. Verwijdert dubbele waarden
+C. Groepeert rijen
+D. Filtert rijen
+
+13. Wat doet een subquery?
+
+A. Een query binnen een andere query
+B. Een query die data verwijdert
+C. Een query die tabellen maakt
+D. Een query die joins vervangt
+
+14. Wat doet DELETE FROM klanten WHERE id = 5?
+
+A. Verwijdert tabel klanten
+B. Verwijdert rij met id 5
+C. Verwijdert kolom id
+D. Verwijdert alle klanten
+
+15. Wat doet ALTER TABLE?
+
+A. Wijzigt de structuur van een tabel
+B. Verwijdert een tabel
+C. Selecteert data
+D. Voegt rijen toe
+
+16. Wat doet UNION?
+
+A. Combineert resultaten van twee queries
+B. Verwijdert dubbele tabellen
+C. Maakt een join
+D. Sorteert resultaten
+
+17. Wat doet UNION ALL?
+
+A. Combineert resultaten zonder duplicaten
+B. Combineert resultaten inclusief duplicaten
+C. Verwijdert alle duplicaten
+D. Sorteert automatisch
+
+18. Wat doet IS NULL?
+
+A. Zoekt lege strings
+B. Zoekt NULL waarden
+C. Zoekt 0 waarden
+D. Zoekt duplicaten
+
+19. Wat doet een INDEX?
+
+A. Verwijdert data
+B. Versnelt zoekopdrachten
+C. Verkleint tabellen
+D. Verbindt tabellen
+
+20. Wat doet deze query?
+SELECT MAX(prijs)
+FROM producten;
+
+A. Geeft de gemiddelde prijs
+B. Geeft de hoogste prijs
+C. Geeft de laagste prijs
+D. Geeft het aantal producten
+
+Antwoorden
+
+B
+C
+B
+C
+B
+B
+B
+B
+B
+B
+C
+B
+A
+B
+A
+A
+B
+B
+B
+B

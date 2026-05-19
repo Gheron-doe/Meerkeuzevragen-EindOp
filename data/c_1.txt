@@ -1,0 +1,199 @@
+1. Welke LINQ methode retourneert exact één element dat voldoet aan een conditie?
+
+A. Single()
+B. First()
+C. Last()
+D. ElementAt()
+E. SingleOrDefault()
+
+Correct: A
+
+2. Wat doet SelectMany()?
+
+A. Filtert een collectie
+B. Flatten van meerdere collecties naar één enkele collectie
+C. Groepeert elementen
+D. Tel elementen
+E. Sorteert elementen
+
+Correct: B
+
+3. Welke LINQ methode retourneert de eerste waarde of een default als er geen element is?
+
+A. First()
+B. Last()
+C. Single()
+D. ElementAt()
+E. FirstOrDefault()
+
+Correct: E
+
+4. Wat doet OrderByDescending()?
+
+A. Sorteert oplopend
+B. Sorteert aflopend
+C. Filtert elementen
+D. Groepeert elementen
+E. Retourneert unieke elementen
+
+Correct: B
+
+5. Wat is het verschil tussen Where() en Select()?
+
+A. Where projecteert, Select filtert
+B. Where filtert, Select projecteert
+C. Beide filteren
+D. Beide projecteren
+E. Geen verschil
+
+Correct: B
+
+6. Welke LINQ-methode combineert twee collecties zonder duplicaten?
+
+A. Join()
+B. Union()
+C. Concat()
+D. Intersect()
+E. Except()
+
+Correct: B
+
+7. Wat doet GroupBy()?
+
+A. Groepeert elementen op een sleutel
+B. Filtert elementen
+C. Sorteert elementen
+D. Projecteert elementen
+E. Tel elementen
+
+Correct: A
+
+8. Wat is het resultaat van Count() op een lege collectie?
+
+A. Exception
+B. null
+C. 0
+D. -1
+E. 1
+
+Correct: C
+
+9. Wat doet Any()?
+
+A. Controleert of alle elementen voldoen aan een voorwaarde
+B. Controleert of ten minste één element voldoet aan een voorwaarde
+C. Retourneert het eerste element
+D. Retourneert de laatste waarde
+E. Telt elementen
+
+Correct: B
+
+10. Wat doet All()?
+
+A. Controleert of alle elementen voldoen aan een voorwaarde
+B. Controleert of ten minste één element voldoet aan een voorwaarde
+C. Retourneert het eerste element
+D. Retourneert de laatste waarde
+E. Telt elementen
+
+Correct: A
+
+11. Welke LINQ methode gebruik je om elementen te combineren met een andere collectie op basis van een sleutel?
+
+A. Join()
+B. Union()
+C. Concat()
+D. Intersect()
+E. Except()
+
+Correct: A
+
+12. Wat doet Distinct()?
+
+A. Verwijdert duplicaten uit een collectie
+B. Groepeert elementen
+C. Sorteert elementen
+D. Filtert elementen
+E. Tel elementen
+
+Correct: A
+
+13. Wat doet Skip(3)?
+
+A. Negeert de eerste 3 elementen
+B. Retourneert de eerste 3 elementen
+C. Sorteert de eerste 3 elementen
+D. Telt elementen
+E. Filtert elementen
+
+Correct: A
+
+14. Wat doet Take(5)?
+
+A. Negeert de eerste 5 elementen
+B. Retourneert de eerste 5 elementen
+C. Telt elementen
+D. Groepeert elementen
+E. Sorteert elementen
+
+Correct: B
+
+15. Wat doet Concat()?
+
+A. Combineert twee collecties inclusief duplicaten
+B. Combineert twee collecties zonder duplicaten
+C. Filtert elementen
+D. Projecteert elementen
+E. Groepeert elementen
+
+Correct: A
+
+16. Welke LINQ methode retourneert de laatste waarde van een collectie?
+
+A. Last()
+B. First()
+C. Single()
+D. ElementAt()
+E. TakeLast()
+
+Correct: A
+
+17. Welke LINQ methode kan een waarde vinden die exact één keer voorkomt en aan een conditie voldoet?
+
+A. First()
+B. FirstOrDefault()
+C. Single()
+D. SingleOrDefault()
+E. Last()
+
+Correct: C
+
+18. Wat doet Intersect()?
+
+A. Retourneert elementen die in beide collecties voorkomen
+B. Retourneert alle elementen inclusief duplicaten
+C. Combineert elementen zonder duplicaten
+D. Retourneert elementen uniek in eerste collectie
+E. Retourneert elementen die ontbreken in tweede collectie
+
+Correct: A
+
+19. Wat doet Except()?
+
+A. Retourneert elementen die in beide collecties voorkomen
+B. Retourneert elementen die in eerste collectie maar niet in tweede voorkomen
+C. Combineert alle elementen
+D. Filtert elementen
+E. Tel elementen
+
+Correct: B
+
+20. Wat doet OrderBy() in query syntax?
+
+A. Sorteert aflopend
+B. Sorteert oplopend
+C. Filtert elementen
+D. Groepeert elementen
+E. Retourneert unieke elementen
+
+Correct: B
