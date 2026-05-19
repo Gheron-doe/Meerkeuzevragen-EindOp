@@ -1,0 +1,68 @@
+<UserControl x:Class="MV_WPF.Views.TestRunnerView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+			<TextBlock Text="Test:" VerticalAlignment="Center" Margin="0,0,5,0" />
+			<ComboBox Width="250" ItemsSource="{Binding Tests}" SelectedItem="{Binding SelectedTest}" DisplayMemberPath="Title" />
+			<TextBlock Text="  User:" VerticalAlignment="Center" Margin="10,0,5,0" />
+			<TextBox Width="120" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" />
+			<Button Content="Load" Margin="10,0,0,0" Padding="10,2" Command="{Binding LoadTestCommand}" />
+			<Button Content="Refresh" Margin="5,0,0,0" Padding="10,2" Command="{Binding RefreshCommand}" />
+		</StackPanel>
+
+		<ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+			<ItemsControl ItemsSource="{Binding CurrentQuestions}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Border BorderBrush="LightGray" BorderThickness="1" Padding="8" Margin="0,4">
+							<StackPanel>
+								<TextBlock Text="{Binding Order, StringFormat='Q{0}'}" FontWeight="Bold" />
+								<TextBlock Text="{Binding Text}" TextWrapping="Wrap" Margin="0,2,0,5" />
+								<ItemsControl ItemsSource="{Binding DisplayedAnswers}">
+									<ItemsControl.ItemTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding}" Margin="10,1" />
+										</DataTemplate>
+									</ItemsControl.ItemTemplate>
+								</ItemsControl>
+								<StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+									<TextBlock Text="Your answer:" VerticalAlignment="Center" Margin="0,0,5,0" />
+									<TextBox Width="40" Text="{Binding SelectedLetter, UpdateSourceTrigger=PropertyChanged}" />
+								</StackPanel>
+							</StackPanel>
+						</Border>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</ScrollViewer>
+
+		<StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,10,0,0">
+			<Button Content="Submit" Padding="15,3" Command="{Binding SubmitCommand}" />
+			<TextBlock Text="Score:" VerticalAlignment="Center" Margin="20,0,5,0" FontWeight="Bold" />
+			<TextBlock Text="{Binding Score}" VerticalAlignment="Center" FontWeight="Bold" />
+			<TextBlock Text="/100" VerticalAlignment="Center" />
+			<TextBlock Text="{Binding Status}" Margin="20,0,0,0" VerticalAlignment="Center" Foreground="DarkSlateGray" />
+		</StackPanel>
+
+		<TextBlock Grid.Row="3" Text="Feedback (wrong answers):" FontWeight="Bold" Margin="0,10,0,5" />
+
+		<DataGrid Grid.Row="4" ItemsSource="{Binding Feedback}" AutoGenerateColumns="False" IsReadOnly="True">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Q" Binding="{Binding QuestionOrder}" Width="40" />
+				<DataGridTextColumn Header="Question" Binding="{Binding QuestionText}" Width="*" />
+				<DataGridTextColumn Header="Gave" Binding="{Binding GivenAnswer}" Width="50" />
+				<DataGridTextColumn Header="Correct" Binding="{Binding CorrectAnswer}" Width="60" />
+				<DataGridTextColumn Header="OK?" Binding="{Binding IsCorrect}" Width="50" />
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</UserControl>

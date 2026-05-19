@@ -1,0 +1,22 @@
+﻿<Application x:Class="MV_WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MV_WPF"
+             xmlns:vm="clr-namespace:MV_WPF.ViewModels"
+             xmlns:vw="clr-namespace:MV_WPF.Views"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type vm:TestManagerViewModel}">
+            <vw:TestManagerView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:QuestionEditorViewModel}">
+            <vw:QuestionEditorView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:GradingViewModel}">
+            <vw:GradingView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ImportSourceViewModel}">
+            <vw:ImportSourceView />
+        </DataTemplate>
+    </Application.Resources>
+</Application>

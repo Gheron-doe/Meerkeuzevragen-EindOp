@@ -1,0 +1,61 @@
+<UserControl x:Class="MV_WPF.Views.GradingView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<!-- Filter row -->
+		<WrapPanel Grid.Row="0" Margin="0,0,0,8">
+			<TextBlock Text="Username:" VerticalAlignment="Center" Margin="0,0,4,0" />
+			<TextBox Width="130" Text="{Binding FilterUsername, UpdateSourceTrigger=PropertyChanged}" />
+
+			<TextBlock Text="  Topic:" VerticalAlignment="Center" Margin="10,0,4,0" />
+			<TextBox Width="130" Text="{Binding FilterTopic, UpdateSourceTrigger=PropertyChanged}" />
+
+			<TextBlock Text="  Start date (yyyy-MM-dd):" VerticalAlignment="Center" Margin="10,0,4,0" />
+			<TextBox Width="100" Text="{Binding FilterStartDate, UpdateSourceTrigger=PropertyChanged, TargetNullValue='', StringFormat=yyyy-MM-dd}" />
+
+			<Button Content="Clear" Margin="6,0,0,0" Padding="8,2" Command="{Binding ClearFiltersCommand}" />
+			<Button Content="Refresh" Margin="6,0,0,0" Padding="10,2" Command="{Binding RefreshCommand}" />
+		</WrapPanel>
+
+		<StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,5">
+			<TextBlock Text="Attempt results (click Feedback cell to edit):" FontWeight="Bold" VerticalAlignment="Center" />
+			<Button Content="View Attempt" Margin="16,0,0,0" Padding="10,2"
+				Command="{Binding OpenAttemptCommand}" />
+		</StackPanel>
+
+		<!-- Results grid -->
+		<DataGrid Grid.Row="2" ItemsSource="{Binding Results}"
+			SelectedItem="{Binding SelectedResult}"
+			AutoGenerateColumns="False" IsReadOnly="False"
+			CanUserAddRows="False" CanUserDeleteRows="False"
+			SelectionMode="Single">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="AttemptId" Binding="{Binding AttemptId}"    Width="75"  IsReadOnly="True" />
+				<DataGridTextColumn Header="Username"  Binding="{Binding Username}"     Width="110" IsReadOnly="True" />
+				<DataGridTextColumn Header="Test"      Binding="{Binding TestTitle}"    Width="*"   IsReadOnly="True" />
+				<DataGridTextColumn Header="Topic"     Binding="{Binding TopicName}"    Width="100" IsReadOnly="True" />
+				<DataGridTextColumn Header="Correct"   Binding="{Binding CorrectCount}" Width="60"  IsReadOnly="True" />
+				<DataGridTextColumn Header="Total"     Binding="{Binding TotalQuestions}" Width="50" IsReadOnly="True" />
+				<DataGridTextColumn Header="Score%"    Binding="{Binding ScoreText}"    Width="65"  IsReadOnly="True" />
+				<DataGridTextColumn Header="Started"   Binding="{Binding StartedAt,  StringFormat=yyyy-MM-dd HH:mm}" Width="130" IsReadOnly="True" />
+				<DataGridTextColumn Header="Completed" Binding="{Binding CompletedAt, StringFormat=yyyy-MM-dd HH:mm}" Width="130" IsReadOnly="True" />
+				<DataGridTextColumn Header="Feedback"  Binding="{Binding Feedback,    UpdateSourceTrigger=LostFocus}" Width="200" IsReadOnly="False" />
+			</DataGrid.Columns>
+		</DataGrid>
+
+		<!-- Export row -->
+		<StackPanel Orientation="Horizontal" Grid.Row="3" Margin="0,10,0,0">
+			<TextBlock Text="Export test:" VerticalAlignment="Center" Margin="0,0,5,0" />
+			<ComboBox Width="200" ItemsSource="{Binding ExportTests}" SelectedItem="{Binding ExportTest}" DisplayMemberPath="Title" />
+			<Button Content="Export attempts (CSV)" Margin="8,0,0,0" Padding="10,2" Command="{Binding ExportCommand}" />
+			<TextBlock Text="{Binding Status}" Margin="16,0,0,0" VerticalAlignment="Center" Foreground="DarkSlateGray" />
+		</StackPanel>
+	</Grid>
+</UserControl>
