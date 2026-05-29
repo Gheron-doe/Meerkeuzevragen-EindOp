@@ -1,0 +1,77 @@
+<UserControl x:Class="MV_WPF.GradingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Filter bar -->
+        <WrapPanel Grid.Row="0" Margin="0,0,0,8">
+            <TextBlock Text="User:" VerticalAlignment="Center" Margin="0,0,4,0" />
+            <TextBox x:Name="FilterUsernameBox" Width="110" TextChanged="OnFilterChanged" />
+
+            <TextBlock Text="  Topic:" VerticalAlignment="Center" Margin="10,0,4,0" />
+            <TextBox x:Name="FilterTopicBox" Width="110" TextChanged="OnFilterChanged" />
+
+            <TextBlock Text="  Difficulty:" VerticalAlignment="Center" Margin="10,0,6,0" />
+            <CheckBox x:Name="Diff1Check" Content="L1" VerticalAlignment="Center"
+                Margin="0,0,4,0" Click="OnFilterChanged" />
+            <CheckBox x:Name="Diff2Check" Content="L2" VerticalAlignment="Center"
+                Margin="0,0,4,0" Click="OnFilterChanged" />
+            <CheckBox x:Name="Diff3Check" Content="L3" VerticalAlignment="Center"
+                Margin="0,0,8,0" Click="OnFilterChanged" />
+
+            <TextBlock Text="Test:" VerticalAlignment="Center" Margin="0,0,4,0" />
+            <ComboBox x:Name="FilterTestCombo" Width="170" DisplayMemberPath="Title"
+                SelectionChanged="OnTestFilterChanged" />
+
+            <Button Content="Clear filters" Margin="8,0,0,0" Padding="8,2"
+                Click="OnClearFilters" />
+            <Button Content="Refresh" Margin="6,0,0,0" Padding="10,2"
+                Click="OnRefresh" />
+        </WrapPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,5">
+            <TextBlock Text="Attempts (tick rows to export; click Feedback cell to edit):"
+                FontWeight="Bold" VerticalAlignment="Center" />
+            <Button Content="View attempt" Margin="16,0,0,0" Padding="10,2"
+                Click="OnOpenAttempt" />
+        </StackPanel>
+
+        <!-- Results grid -->
+        <DataGrid x:Name="ResultsGrid" Grid.Row="2"
+            AutoGenerateColumns="False" IsReadOnly="False"
+            CanUserAddRows="False" CanUserDeleteRows="False"
+            SelectionMode="Single"
+            CellEditEnding="OnCellEditEnding">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header=""           Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" Width="30" />
+                <DataGridTextColumn     Header="AttemptId"  Binding="{Binding AttemptId}"      Width="75"  IsReadOnly="True" />
+                <DataGridTextColumn     Header="Username"   Binding="{Binding Username}"       Width="110" IsReadOnly="True" />
+                <DataGridTextColumn     Header="Test"       Binding="{Binding TestTitle}"      Width="*"   IsReadOnly="True" />
+                <DataGridTextColumn     Header="Topics"     Binding="{Binding TopicNames}"     Width="120" IsReadOnly="True" />
+                <DataGridTextColumn     Header="Difficulty" Binding="{Binding Difficulties}"   Width="70"  IsReadOnly="True" />
+                <DataGridTextColumn     Header="Correct"    Binding="{Binding CorrectCount}"   Width="55"  IsReadOnly="True" />
+                <DataGridTextColumn     Header="Total"      Binding="{Binding TotalQuestions}" Width="50"  IsReadOnly="True" />
+                <DataGridTextColumn     Header="Score%"     Binding="{Binding ScoreText}"      Width="65"  IsReadOnly="True" />
+                <DataGridTextColumn     Header="Started"
+                    Binding="{Binding StartedAt, StringFormat=yyyy-MM-dd HH:mm}"   Width="130" IsReadOnly="True" />
+                <DataGridTextColumn     Header="Completed"
+                    Binding="{Binding CompletedAt, StringFormat=yyyy-MM-dd HH:mm}" Width="130" IsReadOnly="True" />
+                <DataGridTextColumn     Header="Feedback"
+                    Binding="{Binding Feedback, UpdateSourceTrigger=LostFocus}"    Width="200" IsReadOnly="False" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="0,10,0,0">
+            <Button Content="Export selected (CSV)" Padding="10,2"
+                Click="OnExportSelected" />
+            <TextBlock x:Name="StatusText" Margin="16,0,0,0"
+                VerticalAlignment="Center" Foreground="DarkSlateGray" />
+        </StackPanel>
+    </Grid>
+</UserControl>

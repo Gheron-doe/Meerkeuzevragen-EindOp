@@ -1,0 +1,20 @@
+﻿<Window x:Class="MV_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MV_WPF"
+        Title="Multiple Choice Questions" Height="720" Width="1100">
+    <TabControl>
+        <TabItem Header="Tests">
+            <local:TestManagerView x:Name="TestsTab" />
+        </TabItem>
+        <TabItem Header="Questions">
+            <local:QuestionEditorView x:Name="QuestionsTab" />
+        </TabItem>
+        <TabItem Header="Results">
+            <local:GradingView x:Name="GradingTab" />
+        </TabItem>
+        <TabItem Header="Import">
+            <local:ImportSourceView x:Name="ImportTab" />
+        </TabItem>
+    </TabControl>
+</Window>
